@@ -1,0 +1,62 @@
+/*
+class Node{
+    int data;
+    Node next;
+    
+    Node(int x){
+        data = x;
+        next = null;
+    }
+} 
+*/
+
+class Solution
+{
+    public static Node reverseList(Node head)
+    {
+        Node curr = head;
+        Node prev = null;
+        Node next = null;
+        while(curr != null)
+        {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+        return head;
+    }
+    public static Node addOne(Node head) 
+    { 
+
+        Node revNode = reverseList(head);
+        int carry = 1;
+        Node curr = revNode;
+        Node prev = null;
+        while(curr != null)
+        {
+            int sum = curr.data + carry;
+            if(sum < 9)
+            {
+                curr.data = curr.data + carry;
+                return reverseList(revNode);
+            }
+            else
+            {
+                curr.data = sum % 10;
+                carry = sum / 10; 
+            }
+            prev = curr;
+            curr = curr.next;
+        }
+        if(carry == 1)
+        {
+            
+            Node dummy = new Node(carry);
+            prev.next = dummy;
+            return reverseList(revNode);
+        }
+        return reverseList(revNode);
+    }
+}
