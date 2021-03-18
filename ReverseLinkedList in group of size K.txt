@@ -1,3 +1,5 @@
+/*node class of the linked list
+
 class Node
 {
     int data;
@@ -16,11 +18,15 @@ class Solution
 {
     public static Node reverse(Node node, int k)
     {
-        
         Node curr = node;
         Node prev = null;
         Node nextNode = null;
+        boolean firstAttempt = true;
+        Node prev_first = null;
         int count = 0;
+        while(curr != null)
+        {
+            Node first = curr;
         while(curr != null && count < k)
         {
             nextNode = curr.next;
@@ -29,11 +35,11 @@ class Solution
             curr = nextNode;
             count++;
         }
-        if(curr != null)
-        {
-        Node res_head = reverse(curr, k);
-        node.next = res_head;
-        }
-        return prev;
+        if(firstAttempt){node = prev; firstAttempt = false;}
+        else{prev_first.next = prev;}
+         prev_first = first;
+       }
+       return node;
     }
 }
+
