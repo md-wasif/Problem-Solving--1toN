@@ -1,0 +1,39 @@
+class Node
+{
+    int data;
+    Node next;
+    Node(int key)
+    {
+        data = key;
+        next = null;
+    }
+}
+
+*/
+
+
+class Solution
+{
+    public static Node reverse(Node node, int k)
+    {
+        
+        Node curr = node;
+        Node prev = null;
+        Node nextNode = null;
+        int count = 0;
+        while(curr != null && count < k)
+        {
+            nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+            count++;
+        }
+        if(curr != null)
+        {
+        Node res_head = reverse(curr, k);
+        node.next = res_head;
+        }
+        return prev;
+    }
+}
