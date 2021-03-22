@@ -4,6 +4,6 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 - Input: l1 = [2,4,3], l2 = [5,6,4]
 - Output: [7,0,8]
 - Explanation: 342 + 465 = 807.
-5.Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list.
+5. Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list.
 - Input: head = [1,2,3,4,5], left = 2, right = 4
 - Output: [1,4,3,2,5]
