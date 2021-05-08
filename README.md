@@ -13,3 +13,6 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 - Input: l1 = [2,4,3], l2 = [5,6,4]
 - Output: [7,0,8]
 - Explanation: 342 + 465 = 807.
+6. Given an array A[] of integers, sort the array according to frequency of elements. That is elements that have higher frequency come first. If frequencies of two elements are same, then smaller number comes first.
+- Input: 5 5 4 6 4
+- Output: 4 4 5 5 6
